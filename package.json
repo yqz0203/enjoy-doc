@@ -1,6 +1,6 @@
 {
   "name": "enjoy-doc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "通过本地文件，网络地址等快速生成文档",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "yangqizhang",
+  "author": "yqz0203@hotmail.com",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.6.1",
@@ -18,7 +18,10 @@
     "socket.io": "^2.1.1"
   },
   "files": [
-    "./public",
-    "./views"
+    "public/",
+    "views/",
+    "index.js",
+    "app.js",
+    "README.md"
   ]
 }
