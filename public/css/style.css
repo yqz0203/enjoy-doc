@@ -1,0 +1,151 @@
+html,
+body {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #454553;
+  line-height: 1.6;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+#site-nav::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+#site-nav {
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  background: #fff;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+  transition: transform .3s ease;
+}
+
+#site-nav h1 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#site-nav ul {
+  list-style: none;
+  padding: 0 1.5em;
+}
+
+#site-nav ul ul {
+  padding-right: 0;
+}
+
+#site-nav ul li {
+  margin: 15px 0;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#site-nav ul li.active a {
+  color: #0366d6;
+}
+
+#site-nav ul li>ul {
+  padding-left: 15px;
+}
+
+#site-nav ul li>ul li {
+  margin: 10px 0;
+}
+
+#site-nav ul li a {
+  color: #454553;
+  text-decoration: none;
+}
+
+#site-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+#site-main {
+  margin-left: 300px;
+  padding: 20px 20px;
+}
+
+#hamberger {
+  display: none;
+  width: 20px;
+  height: 16px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+#hamberger::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2px;
+  transition: transform .3s;
+  background: #454553;
+  transform-origin: 0% 0%;
+}
+
+#hamberger.open::before {
+  transform: rotate(45deg) translateX(1px);
+}
+
+#hamberger::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background: #454553;
+  transition: transform .3s;
+  transform-origin: 0% 0%;
+}
+
+#hamberger.open::after {
+  transform: rotate(-45deg) translateX(-1px);
+}
+
+#hamberger .line {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  right: 0;
+  height: 2px;
+  transition: opacity .3s;
+  background: #454553;
+}
+
+#hamberger.open .line {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #site-nav {
+    transform: translate3d(-110%, 0, 0);
+    width: 100%;
+  }
+  #site-nav.open {
+    transform: translate3d(0, 0, 0);
+  }
+  #site-main {
+    margin-left: 0;
+  }
+  #hamberger {
+    display: block;
+  }
+}

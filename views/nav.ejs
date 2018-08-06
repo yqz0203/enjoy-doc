@@ -1,0 +1,15 @@
+<ul>
+  <% items.forEach(function(item) { %>
+    <% if(item.route !== undefined) { %>
+  <li id="route-<%= item.route %>" >
+    <a href="#<%= item.route %>"><%= item.text %></a>
+    <% }else{ %>
+  <li>
+    <%= item.text %>
+    <% } %>
+    <% if(item.children && item.children.length>0){ %>
+      <%- include('./nav', {items: item.children}); %>
+    <% } %>
+    <% }) %>
+  </li>
+</ul>
